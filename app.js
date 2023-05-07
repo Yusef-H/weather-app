@@ -1,5 +1,4 @@
 const weatherCard = document.querySelector('.weather-card');
-const country = document.getElementById('country');
 const cityName = document.getElementById('city');
 const temp = document.getElementById('temp');
 const feelsLike = document.getElementById('feels-like');
@@ -19,34 +18,24 @@ async function getWeather(location){
         displayData(weatherData);
     }
     catch(e){
-        alert(e);
+        alert("City name doesn't exist.");
     }
 }
 
 function displayData(data){
     initializeDataInfo(data);
     appendInfoToContainer();
-    
-    
-    
-    console.log(data);
-    console.log(data.current.temp_c);
-
 }
 
 function initializeDataInfo(data){
-    country.innerHTML = data.location.country;
     cityName.innerHTML = data.location.name;
     temp.innerHTML = data.current.temp_c + " °C";
     feelsLike.innerHTML = "Feels like: " + data.current.feelslike_c + " °C";
     humidity.innerHTML = "Humidity: " + data.current.humidity + " %"
-    wind.innerHTML = "Wind Speed: " + data.current.wind_kph + " km/h"
-
-
+    wind.innerHTML = "Wind Speed: " + data.current.wind_kph + " km/h";
 }
 
 function appendInfoToContainer(){
-    weatherCard.appendChild(country);
     weatherCard.appendChild(cityName);
     weatherCard.appendChild(temp);
     weatherCard.appendChild(feelsLike);
@@ -54,7 +43,14 @@ function appendInfoToContainer(){
     weatherCard.appendChild(wind);
 }
 
+function handleSearch(){
+    const searchButton = document.querySelector('.search');
+    const input = document.querySelector('input');
+    searchButton.addEventListener('click', () => {
+        let location = input.value;
+        getWeather(location);
+        input.value = "";
+    })
+}
 
-
-
-getWeather('Haifa');
+handleSearch();
