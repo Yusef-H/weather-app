@@ -24,4 +24,4 @@ function displayData(data){
 }
 
 
-getWeather('london');
+getWeather('Isfiya');

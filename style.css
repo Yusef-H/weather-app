@@ -1,0 +1,46 @@
+
+html{
+    background-image: url("sindy-sussengut-CN-GdKQdxu8-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(30px, 5vmin, 60px);
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(20px, 3vmin, 40px);
+}
+
+input{
+    font-size: clamp(15px, 2vmin, 30px);
+}
+
+.search{
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(15px, 2vmin, 30px);
+    color: white;
+    background-color: black;
+    padding: 5px 10px 5px 10px;
+}
+
+.search:hover{
+    background-color: rgb(64, 208, 233);
+}
+
+.weather-card{
+    margin-top: 20px;
+    
+}
+
