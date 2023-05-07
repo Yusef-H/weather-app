@@ -8,7 +8,7 @@ const wind = document.getElementById('wind');
 async function getWeather(location){
     try{
         const response = await fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=b39abc9b9360493b82290412232804&q=${location}`,
+            `https://api.weatherapi.com/v1/forecast.json?key=b39abc9b9360493b82290412232804&q=${location}`,
             {
             mode: 'cors',
             }
